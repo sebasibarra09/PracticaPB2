@@ -60,11 +60,11 @@ public class TestCases {
 		Transferible cuentaBancaria = new CuentaBancaria(CBU_ESPERADO, ENTIDAD_ESPERADA, TITULAR_ESPERADO);
 		
 		// Verificaci�n
-		assertEquals(CBU_ESPERADO, cuentaBancaria.getCbu());
+		assertEquals(CBU_ESPERADO, cuentaBancaria.getNumero());
 		assertEquals(ENTIDAD_ESPERADA, cuentaBancaria.getEntidad());
 		assertEquals(TITULAR_ESPERADO, cuentaBancaria.getTitular());
 	}
-	/*
+	
 	@Test
 	public void queSePuedaCrearUnaCuentaVirtual() throws CVUInvalidoException{
 		// Preparaci�n 
@@ -76,11 +76,11 @@ public class TestCases {
 		Transferible cuentaVirtual = new CuentaVirtual(CVU_ESPERADO, ENTIDAD_ESPERADA, TITULAR_ESPERADO);
 		
 		// Verificaci�n
-		assertEquals(CVU_ESPERADO, cuentaVirtual.getCvu());
+		assertEquals(CVU_ESPERADO, cuentaVirtual.getNumero());
 		assertEquals(ENTIDAD_ESPERADA, cuentaVirtual.getEntidad());
 		assertEquals(TITULAR_ESPERADO, cuentaVirtual.getTitular());
 	}
-	
+	/*
 	@Test
 	public void queSePuedaCrearUnComercio() throws CuitInvalidoException{
 		// Preparaci�n 
