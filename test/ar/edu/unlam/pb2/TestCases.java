@@ -7,13 +7,13 @@ import org.junit.Test;
 public class TestCases {
 
 	@Test
-	public void queSePuedaCrearUnaTarjetaDeDebito() throws NumeroDeTarjetaInvalidoException{
+	public void queSePuedaCrearUnaTarjetaDeDebito () throws NumeroDeTarjetaInvalidoException{
 		// Preparaci�n 
 		final Long NUMERO_ESPERADO = 5446789813221201L;
 		final String TITULAR_ESPERADO = "CAMILA CIENFUEGOS";
 		final Integer CODIGO_DE_SEGURIDAD_ESPERADO = 123;
 		final String FECHA_DE_VENCIMIENTO_ESPERADO = "25/05/2022";
-		final Double SALDO_ESPERADO = 10000.0;
+		final Double SALDO_ESPERADO = 1000.0;
 		
 		// Ejecuci�n
 		Pagadora tarjetaDeDebito = new TarjetaDeDebito(NUMERO_ESPERADO, TITULAR_ESPERADO, FECHA_DE_VENCIMIENTO_ESPERADO, CODIGO_DE_SEGURIDAD_ESPERADO);

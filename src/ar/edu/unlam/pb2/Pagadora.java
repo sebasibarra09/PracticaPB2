@@ -1,4 +1,4 @@
-package ar.edu.unlam.pb2;
+ package ar.edu.unlam.pb2;
 
 public interface Pagadora {
 
@@ -14,6 +14,6 @@ public interface Pagadora {
 
 	Double getSaldo();
 
-	void setSaldo(double d);
+	void setSaldo(Double d);
 	
 }
