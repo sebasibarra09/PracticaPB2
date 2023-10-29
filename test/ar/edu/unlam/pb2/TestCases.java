@@ -13,7 +13,7 @@ public class TestCases {
 		final String TITULAR_ESPERADO = "CAMILA CIENFUEGOS";
 		final Integer CODIGO_DE_SEGURIDAD_ESPERADO = 123;
 		final String FECHA_DE_VENCIMIENTO_ESPERADO = "25/05/2022";
-		final Double SALDO_ESPERADO = 1000.0;
+		final Double SALDO_ESPERADO = 10000.0;
 		
 		// Ejecuci�n
 		Pagadora tarjetaDeDebito = new TarjetaDeDebito(NUMERO_ESPERADO, TITULAR_ESPERADO, FECHA_DE_VENCIMIENTO_ESPERADO, CODIGO_DE_SEGURIDAD_ESPERADO);
@@ -34,21 +34,21 @@ public class TestCases {
 		final String TITULAR_ESPERADO = "SOFIA BARRIENTOS";
 		final Integer CODIGO_DE_SEGURIDAD_ESPERADO = 567;
 		final String FECHA_DE_VENCIMIENTO_ESPERADO = "25/05/2025";
-		final double LIMITE_COMPRA_EN_PESOS = 100000.0;
-		final double LIMITE_COMPRA_EN_DOLARES = 1000.0;
+		final Double LIMITE_COMPRA_EN_PESOS = 100000.0;
+		final Double LIMITE_COMPRA_EN_DOLARES = 1000.0;
 		
 		// Ejecuci�n
-		Pagadora tarjetaDeCredito = new TarjetaDeCredito(NUMERO_ESPERADO, TITULAR_ESPERADO, FECHA_DE_VENCIMIENTO_ESPERADO, CODIGO_DE_SEGURIDAD_ESPERADO, LIMITE_COMPRA_EN_PESOS, LIMITE_DE_COMPRA_EN_DOLARES);
+		Pagadora tarjetaDeCredito = new TarjetaDeCredito(NUMERO_ESPERADO, TITULAR_ESPERADO, FECHA_DE_VENCIMIENTO_ESPERADO, CODIGO_DE_SEGURIDAD_ESPERADO, LIMITE_COMPRA_EN_PESOS, LIMITE_COMPRA_EN_DOLARES);
 
 		// Verificaci�n
 		assertEquals(NUMERO_ESPERADO, tarjetaDeCredito.getNumero());
 		assertEquals(TITULAR_ESPERADO, tarjetaDeCredito.getTitular());
 		assertEquals(CODIGO_DE_SEGURIDAD_ESPERADO, tarjetaDeCredito.getCodigoDeSeguridad());
 		assertEquals(FECHA_DE_VENCIMIENTO_ESPERADO, tarjetaDeCredito.getFechaDeVencimiento());
-		assertEquals(LIMITE_COMPRA_EN_PESOS, tarjetaDeCredito.getLimiteDeCompraEnPesos());
-		assertEquals(LIMITE_COMPRA_EN_DOLARES, tarjetaDeCredito.getLimiteDeCompraEnDolares());
+		assertEquals(LIMITE_COMPRA_EN_PESOS, ((TarjetaDeCredito)tarjetaDeCredito).getLimiteDeCompraEnPesos());
+		assertEquals(LIMITE_COMPRA_EN_DOLARES,((TarjetaDeCredito)tarjetaDeCredito).getLimiteDeCompraEnDolares());
 	}
-	/*
+	
 	@Test
 	public void queSePuedaCrearUnaCuentaBancaria() throws CBUInvalidoException{
 		// Preparaci�n 
@@ -64,7 +64,7 @@ public class TestCases {
 		assertEquals(ENTIDAD_ESPERADA, cuentaBancaria.getEntidad());
 		assertEquals(TITULAR_ESPERADO, cuentaBancaria.getTitular());
 	}
-	
+	/*
 	@Test
 	public void queSePuedaCrearUnaCuentaVirtual() throws CVUInvalidoException{
 		// Preparaci�n 
