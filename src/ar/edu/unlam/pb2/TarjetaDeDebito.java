@@ -24,6 +24,11 @@ public class TarjetaDeDebito extends Tarjeta implements Pagadora {
 		return null;
 	}
 
+	
+	@Override
+	public void setSaldo(Double saldo) {
+		this.saldo= saldo;
+	}
 
 	@Override
 	public Double getSaldo() {

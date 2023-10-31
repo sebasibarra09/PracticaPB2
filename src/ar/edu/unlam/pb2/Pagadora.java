@@ -8,10 +8,6 @@ public interface Pagadora {
 
 	String getTitular();
 
-	Integer getCodigoDeSeguridad();
-
-	Object getFechaDeVencimiento();
-
 	Double getSaldo();
 
 	void setSaldo(Double d);

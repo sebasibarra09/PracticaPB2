@@ -1,9 +1,8 @@
 package ar.edu.unlam.pb2;
 
-public abstract class Tarjeta {
+public abstract class Tarjeta extends MedioDePago{
 	
 	protected Long numero;
-	protected String titular;
 	protected String fecha_de_vencimiento;
 	protected Integer codigo_de_seguridad;
 	protected Integer CANTIDAD_DE_DIGITOS_DE_LA_TARJETA= 16;
@@ -32,17 +31,12 @@ public abstract class Tarjeta {
 	}
 
 
-	public String getTitular() {
-		return this.titular;
-	}
-
-
 	public Integer getCodigoDeSeguridad() {
 		return this.codigo_de_seguridad;
 	}
 
 
-	public Object getFechaDeVencimiento() {
+	public String getFechaDeVencimiento() {
 		return this.fecha_de_vencimiento;
 	}
 
@@ -59,6 +53,31 @@ public abstract class Tarjeta {
 			throw new NumeroDeTarjetaInvalidoException();
 		}
 		this.numero = numero;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Tarjeta other = (Tarjeta) obj;
+		if (numero == null) {
+			if (other.numero != null)
+				return false;
+		} else if (!numero.equals(other.numero))
+			return false;
+		return true;
 	}
 	
 }
