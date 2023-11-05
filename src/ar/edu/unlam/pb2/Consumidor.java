@@ -7,7 +7,7 @@ public class Consumidor implements Comparable{
 	
 	private Integer dni;
 	private String nombre;
-	private Set<MedioDePago>mediosDePago;
+	private Set<MedioDePago> mediosDePago;
 
 	public Consumidor(Integer dni, String nombre) {
 		this.setDni(dni);
@@ -70,32 +70,51 @@ public class Consumidor implements Comparable{
 	}
 
 	public void agregarMedioDePago(MedioDePago nuevo) {
+		System.out.println(nuevo);
 		mediosDePago.add(nuevo);
 	}
 
 	public MedioDePago getMedioPagador(String identificadorDelMedioDePago) {
+		
 		for (MedioDePago actual : mediosDePago) {
-			if (actual instanceof Tarjeta) {
+			if (actual instanceof TarjetaDeDebito) {
+				System.out.println("1");
 				Long numero = Long.parseLong(identificadorDelMedioDePago);
 				if(((Tarjeta) actual).getNumero().equals(numero)) {
 					return actual;
+					
 				}
 			}
 			else {
 				if(actual instanceof CuentaBancaria) {
+					System.out.println("2");
 					if(((CuentaBancaria)actual).getNumero() == identificadorDelMedioDePago) {
 						return actual;
+						
 				}
 			}
 			else {
 				if(((CuentaVirtual)actual).getNumero() == identificadorDelMedioDePago) {
+					System.out.println("3");
 					return actual;
+					}
+				 }
+
 			}
+			
+	}
 		return null;
 	}
 
-			}
+
+
+	public Set<MedioDePago> getMediosDePago() {
+		return mediosDePago;
 	}
-		return null;
+
+
+
+	public void setMediosDePago(Set<MedioDePago> mediosDePago) {
+		this.mediosDePago = mediosDePago;
 	}
 }

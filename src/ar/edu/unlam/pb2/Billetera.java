@@ -108,15 +108,19 @@ public class Billetera {
 
 
 	public Boolean pagar(Compra codigoQR, MedioDePago medioPagador) {
-		for(Compra actual: compras) {
-			if (actual== codigoQR) {
-				//resta validar el saldo y actualizar los saldos
-				codigoQR.setPagada(true);
-				return true;
-			}
+		System.out.println(medioPagador);
+		if (medioPagador instanceof TarjetaDeDebito) {
+			System.out.println("llega");
+			((TarjetaDeDebito)medioPagador).setSaldo(100000.0);
+			if(((TarjetaDeDebito) medioPagador).getSaldo() - codigoQR.getImporte()>=0)
+			((TarjetaDeDebito)medioPagador).setSaldo(((TarjetaDeDebito) medioPagador).getSaldo() - codigoQR.getImporte());
+			return true;
 		}
+			
+			
 		return false;
 	}
 	
 
-}
+	}
+
