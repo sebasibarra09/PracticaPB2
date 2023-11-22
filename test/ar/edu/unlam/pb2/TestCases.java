@@ -166,10 +166,12 @@ public class TestCases {
 		Billetera mataGalan = new Billetera("Ank");
 		mataGalan.agregarConsumidor(new Consumidor(27541231, "Luis Gomez"));
 		mataGalan.agregarMedioDePago(27541231, new TarjetaDeCredito(5423542385612354L, "Luis Gomez", "10/10/2026", 265, 100000.0, 1000.0));
+		mataGalan.agregarMedioDePago(27541231, new TarjetaDeDebito(5446789813221201L, "Luis Gomez", "10/10/2026", 265));
 		mataGalan.agregarComercio(new Comercio(30456213545L, "Panader�a"));	
+		System.out.println(mataGalan.getConsumidor(27541231).getMedioPagador("5446789813221201L"));
 		// Ejecuci�n	
 		Compra codigoQR = mataGalan.generarCodigoQR(30456213545L, 1000.0);
-		Boolean resultado = mataGalan.pagar(codigoQR, mataGalan.getConsumidor(27541231).getMedioPagador("48332562153254623L"));
+		Boolean resultado = mataGalan.pagar(codigoQR, mataGalan.getConsumidor(27541231).getMedioPagador("4833256215325462L"));
 		
 		// Verificaci�n
 		assertTrue(resultado);
